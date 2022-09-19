@@ -4,8 +4,7 @@ import { configFeatureKey } from '../reducers/config.reducer';
 
 const selectFeature = createFeatureSelector<ConfigState>(configFeatureKey);
 
-export const selectIncrementAmount = () =>
-  createSelector(
-    selectFeature,
-    (configState: ConfigState) => configState.incrementAmount
-  );
+export const selectIncrementAmount = createSelector(
+  selectFeature,
+  (configState: ConfigState) => configState.incrementAmount
+);

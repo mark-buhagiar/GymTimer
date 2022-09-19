@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StopwatchModule } from './modules/stopwatch/stopwatch.module';
 import { ConfigModule } from './modules/config/config.module';
-import { TimeDisplayModule } from './modules/time-display/time-display.module';
+import { ClockModule } from './modules/clock/clock.module';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './modules/shared/shared.module';
 
@@ -20,7 +20,7 @@ import { SharedModule } from './modules/shared/shared.module';
     AppRoutingModule,
     StopwatchModule,
     ConfigModule,
-    TimeDisplayModule,
+    ClockModule,
     SharedModule,
   ],
   providers: [],

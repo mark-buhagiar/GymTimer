@@ -16,7 +16,7 @@ import { interval } from 'rxjs';
 export class StopwatchEffects {
   decrementTimeInterval = createEffect(() =>
     interval(1000).pipe(
-      concatLatestFrom(() => [this.store.select(selectTimeRemaining())]),
+      concatLatestFrom(() => [this.store.select(selectTimeRemaining)]),
       filter(([_, timeRemaining]) => timeRemaining > 0),
       switchMap(() => [decrementSecond()])
     )
@@ -26,8 +26,8 @@ export class StopwatchEffects {
     this.actions$.pipe(
       ofType(StopwatchActions.ADD_TIME),
       concatLatestFrom(() => [
-        this.store.select(selectTimeRemaining()),
-        this.store.select(selectIncrementAmount()),
+        this.store.select(selectTimeRemaining),
+        this.store.select(selectIncrementAmount),
       ]),
       switchMap(([_, timeRemaining, incrementAmount]) => [
         setTime({ time: timeRemaining + incrementAmount }),

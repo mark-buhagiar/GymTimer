@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TimeDisplayComponent } from './components/time-display/time-display.component';
+import { ClockComponent } from './components/clock/clock.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [TimeDisplayComponent],
+  declarations: [ClockComponent],
   imports: [CommonModule, SharedModule],
-  exports: [TimeDisplayComponent],
+  exports: [ClockComponent],
 })
-export class TimeDisplayModule {}
+export class ClockModule {}

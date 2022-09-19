@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AppState } from '../ngrx/state/app.state';
 import { Store } from '@ngrx/store';
-import { selectTimeRemaining } from '../ngrx/selectors/stopwatch.selector';
+import {
+  selectIsStopwatchRunning,
+} from '../ngrx/selectors/stopwatch.selector';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +12,10 @@ import { selectTimeRemaining } from '../ngrx/selectors/stopwatch.selector';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  stopwatchRunning: boolean = false;
+  stopwatchRunning$: Observable<boolean>;
 
   constructor(private store: Store<AppState>) {
-    this.store
-      .select(selectTimeRemaining())
-      .subscribe((x) => (this.stopwatchRunning = x > 0));
+    this.stopwatchRunning$ = this.store.select(selectIsStopwatchRunning);
   }
 
   ngOnInit(): void {}

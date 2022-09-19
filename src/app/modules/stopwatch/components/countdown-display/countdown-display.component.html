@@ -1,1 +1,4 @@
-<app-time-renderer [value]="countdownValue$ | async | iffNotNullOrUndefined | formatAsMinutesAndSeconds"></app-time-renderer>
+<div>
+    <app-time-renderer [value]="countdownValue$ | async | iffNotNullOrUndefined | formatAsMinutesAndSeconds"></app-time-renderer>
+    <app-clock [fontSize]="clockSize"></app-clock>
+</div>

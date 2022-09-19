@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DateTime } from 'luxon';
+import { Size } from 'src/app/constants/sizes';
 
 @Component({
-  selector: 'app-time-display',
-  templateUrl: './time-display.component.html',
-  styleUrls: ['./time-display.component.scss'],
+  selector: 'app-clock',
+  templateUrl: './clock.component.html',
+  styleUrls: ['./clock.component.scss'],
 })
-export class TimeDisplayComponent implements OnInit {
+export class ClockComponent implements OnInit {
+  @Input() fontSize: Size = Size.LARGE;
+
   timeValue: string;
 
   constructor() {
@@ -14,6 +17,7 @@ export class TimeDisplayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('asdasdasdasd', this.fontSize)
     this.setupClock();
   }
 

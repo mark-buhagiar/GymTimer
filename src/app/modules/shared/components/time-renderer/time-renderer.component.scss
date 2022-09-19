@@ -1,12 +1,29 @@
-p {
-  font-family: "Share Tech Mono";
-  color: red;
-  font-size: 20.5vw;
-  cursor: pointer;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+div {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+
+  p {
+    font-family: "Share Tech Mono";
+    color: red;
+    font-size: 20.5vw;
+    cursor: pointer;
+    display: inline;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+    &.font-lg {
+      font-size: 20.5vw;
+    }
+
+    &.font-sm {
+      font-size: 5.5vw;
+      position: absolute;
+      bottom: 0em;
+    }
+  }
 }
