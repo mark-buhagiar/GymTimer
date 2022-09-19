@@ -1,0 +1,6 @@
+<div>
+  <app-countdown-display
+    *ngIf="stopwatchRunning; else timeDisplay"
+  ></app-countdown-display>
+  <ng-template #timeDisplay><app-time-display></app-time-display></ng-template>
+</div>

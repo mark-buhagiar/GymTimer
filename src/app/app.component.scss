@@ -1,0 +1,12 @@
+.app-wrapper {
+  height: 100%;
+  background-color: black;
+}
+
+:host::ng-deep {
+  .material-icons {
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+  }
+}
