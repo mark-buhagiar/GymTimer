@@ -17,7 +17,6 @@ export class ClockComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('asdasdasdasd', this.fontSize)
     this.setupClock();
   }
 
